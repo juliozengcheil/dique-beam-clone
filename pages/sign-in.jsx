@@ -1,10 +1,10 @@
 import { Button } from '../components/button'
 import { Footer } from '../components/footer'
-import { authOptions } from '../lib/auth'
 import { getServerSession } from 'next-auth/next'
 import { getProviders, signIn } from 'next-auth/react'
 import Head from 'next/head'
 import Div100vh from 'react-div-100vh'
+import { authOptions } from '../lib/auth'
 
 const SignIn = ({
   providers,
