@@ -2,8 +2,20 @@ import { isCharacterALetter } from '../lib/text'
 import Image from 'next/image'
 import * as React from 'react'
 
+const dimension= {
+  sm: 34,
+  md: 48,
+  lg: 128,
+}
+
+const initialSize = {
+  sm: 'w-5 h-5',
+  md: 'w-6 h-6',
+  lg: 'w-16 h-16',
+}
+
 export function Avatar({ size = 'md', name, src }) {
-  const initial = name.charAt(0).toLocaleLowerCase()
+  const initial = name ? name?.charAt(0).toLocaleLowerCase() : 'goku' 
 
   return (
     <div className="relative inline-flex flex-shrink-0 rounded-full">
