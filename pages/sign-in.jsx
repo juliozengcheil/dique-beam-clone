@@ -21,7 +21,7 @@ const SignIn = ({
           <div className="relative bottom-16">
             <Logo className="w-[326px] text-red-light h-[94px] mb-8 bg-primary" />
             <div className="w-full space-y-4 text-center bg-primary">
-              {Object.values(providers!).map((provider) => (
+              {Object.values(providers).map((provider) => (
                 <div key={provider.name}>
                   <Button
                     className="!h-12 !px-5 !text-lg"
@@ -43,7 +43,7 @@ const SignIn = ({
 }
 
 export const getServerSideProps = async (
-  context: GetServerSidePropsContext
+  context
 ) => {
   const session = await getServerSession(context, authOptions)
   const providers = await getProviders()
