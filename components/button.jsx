@@ -1,5 +1,5 @@
-import { SpinnerIcon } from '@/components/icons'
-import { classNames } from '@/lib/classnames'
+import { SpinnerIcon } from './icons'
+import { classNames } from '../lib/classnames'
 import * as React from 'react'
 
 export function buttonClasses({

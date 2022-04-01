@@ -1,8 +1,8 @@
-import { Avatar } from '@/components/avatar'
-import { ButtonLink } from '@/components/button-link'
-import { Footer } from '@/components/footer'
-import { IconButton } from '@/components/icon-button'
-import { Logo, SearchIcon } from '@/components/icons'
+import { Avatar } from './avatar'
+import { ButtonLink } from './button-link'
+import { Footer } from './footer'
+import { IconButton } from './icon-button'
+import { Logo, SearchIcon } from './icons'
 import {
   Menu,
   MenuButton,
@@ -10,8 +10,8 @@ import {
   MenuItemLink,
   MenuItems,
   MenuItemsContent,
-} from '@/components/menu'
-import { SearchDialog } from '@/components/search-dialog'
+} from './menu'
+import { SearchDialog } from './search-dialog'
 import { capitalize } from '@/lib/text'
 import { signOut, useSession } from 'next-auth/react'
 import { useTheme } from 'next-themes'

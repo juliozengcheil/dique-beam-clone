@@ -1,4 +1,4 @@
-import { GithubLogo, HeartFilledIcon } from '@/components/icons'
+import { GithubLogo, HeartFilledIcon } from './icons'
 import * as React from 'react'
 import packageJson from '../package.json'
 

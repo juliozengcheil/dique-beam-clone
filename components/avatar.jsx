@@ -1,4 +1,4 @@
-import { isCharacterALetter } from '@/lib/text'
+import { isCharacterALetter } from '../lib/text'
 import Image from 'next/image'
 import * as React from 'react'
 

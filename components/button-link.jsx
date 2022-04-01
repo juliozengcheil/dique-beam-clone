@@ -1,4 +1,4 @@
-import { buttonClasses} from '@/components/button'
+import { buttonClasses} from './button'
 import Link from 'next/link'
 import * as React from 'react'
 

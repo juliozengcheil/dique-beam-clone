@@ -1,4 +1,4 @@
-import { classNames } from '@/lib/classnames'
+import { classNames } from '../lib/classnames'
 import * as React from 'react'
 
 export const IconButton = React.forwardRef(
