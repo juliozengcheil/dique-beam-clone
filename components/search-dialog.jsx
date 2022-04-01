@@ -1,17 +1,12 @@
-import { SearchIcon, SpinnerIcon } from '@/components/icons'
-import { classNames } from '@/lib/classnames'
-import { InferQueryOutput, trpc } from '@/lib/trpc'
+import { SearchIcon, SpinnerIcon } from './icons'
+import { classNames } from '../lib/classnames'
+import { InferQueryOutput, trpc } from '../lib/trpc'
 import { Dialog, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
 import { useDebounce } from 'use-debounce'
 import { ItemOptions, useItemList } from 'use-item-list'
-
-type SearchDialogProps = {
-  isOpen: boolean
-  onClose: () => void
-}
 
 function SearchResult({
   useItem,
