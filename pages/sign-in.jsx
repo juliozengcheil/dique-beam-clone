@@ -1,7 +1,7 @@
-import { Button } from '@/components/button'
-import { Footer } from '@/components/footer'
-import { Logo } from '@/components/icons'
-import { authOptions } from '@/lib/auth'
+import { Button } from '../components/button'
+import { Footer } from '../components/footer'
+import { Logo } from '../components/icons'
+import { authOptions } from '../lib/auth'
 import { getServerSession } from 'next-auth/next'
 import { getProviders, signIn } from 'next-auth/react'
 import Head from 'next/head'
@@ -19,9 +19,10 @@ const SignIn = ({
       <Div100vh>
         <main className="relative flex items-center justify-center h-full bg-center bg-circle-grid dark:bg-circle-grid-dark">
           <div className="relative bottom-16">
-            <Logo className="w-[326px] text-red-light h-[94px] mb-8 bg-primary" />
+            <h2>Clone de Beam</h2>
             <div className="w-full space-y-4 text-center bg-primary">
-              {Object.values(providers).map((provider) => (
+              <span>proveedores</span>
+              {providers && Object.values(providers).map((provider) => (
                 <div key={provider.name}>
                   <Button
                     className="!h-12 !px-5 !text-lg"
