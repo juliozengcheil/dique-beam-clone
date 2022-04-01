@@ -19,6 +19,6 @@ export default function Home() {
           hello soy footer 
         </footer>
       </div>
-    </Layout>
+     </Layout>
   );
 }
