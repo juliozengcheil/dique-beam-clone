@@ -1,28 +1,18 @@
 import { SearchIcon, SpinnerIcon } from './icons'
 import { classNames } from '../lib/classnames'
-import { InferQueryOutput, trpc } from '../lib/trpc'
+import {  trpc } from '../lib/trpc'
 import { Dialog, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
 import { useDebounce } from 'use-debounce'
-import { ItemOptions, useItemList } from 'use-item-list'
+import { useItemList } from 'use-item-list'
 
 function SearchResult({
   useItem,
   result,
-}: {
-  useItem: ({ ref, text, value, disabled }: ItemOptions) => {
-    id: string
-    index: number
-    highlight: () => void
-    select: () => void
-    selected: any
-    useHighlighted: () => Boolean
-  }
-  result: InferQueryOutput<'post.search'>[number]
 }) {
-  const ref = React.useRef<HTMLLIElement>(null)
+  const ref = React.useRef(null)
   const { id, index, highlight, select, useHighlighted } = useItem({
     ref,
     value: result,
@@ -45,7 +35,7 @@ function SearchResult({
   )
 }
 
-function SearchField({ onSelect }: { onSelect: () => void }) {
+function SearchField({ onSelect }) {
   const [value, setValue] = React.useState('')
   const [debouncedValue] = useDebounce(value, 1000)
   const router = useRouter()
@@ -70,7 +60,7 @@ function SearchField({ onSelect }: { onSelect: () => void }) {
   })
 
   React.useEffect(() => {
-    function handleKeydownEvent(event: KeyboardEvent) {
+    function handleKeydownEvent(event) {
       const { code } = event
 
       if (code === 'ArrowUp' || code === 'ArrowDown' || code === 'Enter') {
@@ -157,7 +147,7 @@ function SearchField({ onSelect }: { onSelect: () => void }) {
   )
 }
 
-export function SearchDialog({ isOpen, onClose }: SearchDialogProps) {
+export function SearchDialog({ isOpen, onClose }) {
   return (
     <Transition.Root show={isOpen} as={React.Fragment}>
       <Dialog
