@@ -11,15 +11,15 @@ import {
   MenuItems,
   MenuItemsContent,
 } from './menu'
-import { SearchDialog } from './search-dialog'
-import { capitalize } from '@/lib/text'
+// import { SearchDialog } from './search-dialog'
+import { capitalize } from '../lib/text'
 import { signOut, useSession } from 'next-auth/react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import * as React from 'react'
 
 
-export function Layout({ children }) {
+export default function Layout({ children }) {
   const { data: session } = useSession()
   const { theme, themes, setTheme } = useTheme()
   const [isSearchDialogOpen, setIsSearchDialogOpen] = React.useState(false)
@@ -29,7 +29,7 @@ export function Layout({ children }) {
       <header className="flex items-center justify-between gap-4 py-12 md:py-20">
         <Link href="/">
           <a>
-            <Logo className="w-auto text-red-light h-[34px]" />
+            <h2>Dique Beam Clone ✨ </h2>
           </a>
         </Link>
         <div className="flex items-center gap-2 md:gap-4">
@@ -56,6 +56,9 @@ export function Layout({ children }) {
                 <MenuItemLink href={`/profile/${session?.user.id}`}>
                   Profile
                 </MenuItemLink>
+                {/* <MenuItemButton onClick={() => signOut()}>
+                  Log out
+                </MenuItemButton> */}
                 <MenuItemButton onClick={() => signOut()}>
                   Log out
                 </MenuItemButton>
@@ -96,12 +99,12 @@ export function Layout({ children }) {
         <Footer />
       </div>
 
-      <SearchDialog
+      {/* <SearchDialog
         isOpen={isSearchDialogOpen}
         onClose={() => {
           setIsSearchDialogOpen(false)
         }}
-      />
+      /> */}
     </div>
   )
 }
